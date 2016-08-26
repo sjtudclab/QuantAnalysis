@@ -1,6 +1,6 @@
 package com.eugene.model;
 
-public class ModelBacktestParameters {
+public class DaySvmModelBacktestParameters {
 
     private String baseDir;
     private String instrument;
@@ -14,7 +14,7 @@ public class ModelBacktestParameters {
      * No args constructor for use in serialization
      *
      */
-    public ModelBacktestParameters() {
+    public DaySvmModelBacktestParameters() {
     }
 
     /**
@@ -27,7 +27,7 @@ public class ModelBacktestParameters {
      * @param initCapital
      * @param yearNum
      */
-    public ModelBacktestParameters(String baseDir, String instrument, Integer initCapital, Integer startYear, Integer yearNum, Integer winDays, Integer win) {
+    public DaySvmModelBacktestParameters(String baseDir, String instrument, Integer initCapital, Integer startYear, Integer yearNum, Integer winDays, Integer win) {
         this.baseDir = baseDir;
         this.instrument = instrument;
         this.initCapital = initCapital;

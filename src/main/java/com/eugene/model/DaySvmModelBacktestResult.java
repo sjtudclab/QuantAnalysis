@@ -1,6 +1,6 @@
 package com.eugene.model;
 
-public class ModelBacktestResult {
+public class DaySvmModelBacktestResult {
 
     private String dates;
     private String close;
@@ -17,7 +17,7 @@ public class ModelBacktestResult {
      * No args constructor for use in serialization
      *
      */
-    public ModelBacktestResult() {
+    public DaySvmModelBacktestResult() {
     }
 
     /**
@@ -33,7 +33,7 @@ public class ModelBacktestResult {
      * @param buys
      * @param close
      */
-    public ModelBacktestResult(String dates, String close, String buys, String sells, String actionDates, String portfolios, Double accuracy, Double totalValue, Double totalReturn, Double annualizedReturn) {
+    public DaySvmModelBacktestResult(String dates, String close, String buys, String sells, String actionDates, String portfolios, Double accuracy, Double totalValue, Double totalReturn, Double annualizedReturn) {
         this.dates = dates;
         this.close = close;
         this.buys = buys;
