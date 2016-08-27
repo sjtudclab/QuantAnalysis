@@ -17,14 +17,15 @@ import java.io.InputStreamReader;
 @Service
 public class ModelBacktestServiceImpl implements ModelBacktestService {
 
-//    private static final String PY_PATH = "/home/dc/anaconda2/bin/python";
-//    private static final String PY_FILE_PATH = "/home/dc/pyscript/Days.py";
-//    //private static final String PY_FILE_PATH = "/home/dc/PycharmProjects/Test/module/Days.py";
-//    private static final String BASE_PATH = "/home/dc/Data/";
-    private static final String PY_PATH = "/Users/eugene/anaconda/bin/python";
-    private static final String PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/Days.py";
-    private static final String MA_PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/MA.py";
-    private static final String BASE_PATH = "/Users/eugene/Downloads/data/";
+    private static final String PY_PATH = "/home/dc/anaconda2/bin/python";
+    private static final String MA_PY_FILE_PATH = "/home/dc/pyscript/MA.py";
+    private static final String PY_FILE_PATH = "/home/dc/pyscript/Days.py";
+    //private static final String PY_FILE_PATH = "/home/dc/PycharmProjects/Test/module/Days.py";
+    private static final String BASE_PATH = "/home/dc/Data/";
+    //private static final String PY_PATH = "/Users/eugene/anaconda/bin/python";
+    //private static final String PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/Days.py";
+    //private static final String MA_PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/MA.py";
+    //private static final String BASE_PATH = "/Users/eugene/Downloads/data/";
 
     @Override
     public DaySvmModelBacktestResult doDaySvmModelBacktest(DaySvmModelBacktestParameters paras) {
