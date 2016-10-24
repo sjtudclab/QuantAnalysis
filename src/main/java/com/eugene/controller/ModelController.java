@@ -3,10 +3,7 @@ package com.eugene.controller;
 import com.eugene.common.Constants;
 import com.eugene.exception.ErrorCode;
 import com.eugene.exception.RestException;
-import com.eugene.model.DaySvmModelBacktestParameters;
-import com.eugene.model.DaySvmModelBacktestResult;
-import com.eugene.model.MABacktestParameters;
-import com.eugene.model.MABacktestResult;
+import com.eugene.model.*;
 import com.eugene.service.ModelBacktestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -48,6 +45,19 @@ public class ModelController {
             return res;
         } else {
             throw new RestException("MA模型回测请求失败", ErrorCode.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @ApiOperation(value = "请求Hurst模型结果")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "NOT_FOUND")})
+    @RequestMapping(method = RequestMethod.POST, value = "/hurst")
+    public HurstModelResult hurstModel(@RequestBody HurstModelParameters modelParas){
+        HurstModelResult res = service.doHurstModel(modelParas);
+        if (res != null){
+            return res;
+        } else {
+            throw new RestException("Hurst模型请求失败", ErrorCode.INTERNAL_SERVER_ERROR);
         }
     }
 
