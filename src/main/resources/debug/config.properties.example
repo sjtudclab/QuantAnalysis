@@ -14,3 +14,12 @@ sqlmapperxml.target.package=com.eugene.mapper
 sqlmapper.target.package=com.eugene.mapper
 
 log.level=DEBUG
+
+# 路径参数
+PY_PATH=/home/dc/anaconda2/bin/python
+
+MA_PY_FILE_PATH=/home/dc/pyscript/MA.py
+SVM_DAY_PY_FILE_PATH=/home/dc/pyscript/Days.py
+HURST_PY_FILE_PATH=/home/dc/pyscript/Hurst.py
+
+DATA_BASE_PATH=/home/dc/Data/

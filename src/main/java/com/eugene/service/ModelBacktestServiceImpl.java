@@ -3,6 +3,7 @@ package com.eugene.service;
 import com.eugene.exception.ErrorCode;
 import com.eugene.exception.RestException;
 import com.eugene.model.*;
+import com.eugene.tools.PropertyReader;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -14,17 +15,11 @@ import java.io.InputStreamReader;
 @Service
 public class ModelBacktestServiceImpl implements ModelBacktestService {
 
-    private static final String PY_PATH = "/home/dc/anaconda2/bin/python";
-    private static final String MA_PY_FILE_PATH = "/home/dc/pyscript/MA.py";
-    private static final String PY_FILE_PATH = "/home/dc/pyscript/Days.py";
-    private static final String HURST_PY_FILE_PATH = "/home/dc/pyscript/Hurst.py";
-    private static final String BASE_PATH = "/home/dc/Data/";
-
-//    private static final String PY_PATH = "E:\\Program Files win10\\Anaconda2\\python";
-//    private static final String PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/Days.py";
-//    private static final String MA_PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/MA.py";
-//    private static final String HURST_PY_FILE_PATH = "E:\\ProgramData\\PyStudy\\finance\\module\\Hurst.py";
-//    private static final String BASE_PATH = "E:\\Downloads\\Data\\";
+    private static final String PY_PATH = PropertyReader.getInstance().getPythonPath();
+    private static final String MA_PY_FILE_PATH = PropertyReader.getInstance().getMAPath();
+    private static final String PY_FILE_PATH = PropertyReader.getInstance().getSVMDayPath();
+    private static final String HURST_PY_FILE_PATH = PropertyReader.getInstance().getHurstPath();
+    private static final String BASE_PATH = PropertyReader.getInstance().getDataPath();
 
 //    private static final String PY_PATH = "/Users/eugene/anaconda/bin/python";
 //    private static final String PY_FILE_PATH = "/Users/eugene/ProgramData/PyStudy/finance/module/Days.py";
@@ -180,14 +175,6 @@ public class ModelBacktestServiceImpl implements ModelBacktestService {
             while((line=in.readLine())!=null){
                 System.out.println(line);
             }
-//            res.setDates(in.readLine());
-//            res.setClose(in.readLine());
-//            res.setBuys(in.readLine());
-//            res.setSells(in.readLine());
-//            res.setPortfolios(in.readLine());
-//            res.setTotalValue(Double.valueOf(in.readLine()));
-//            res.setTotalReturn(Double.valueOf(in.readLine()));
-//            res.setAnnualizedReturn(Double.valueOf(in.readLine()));
 
             p.waitFor();
             in.close();
