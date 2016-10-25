@@ -36,18 +36,16 @@ public class SpringfoxDocConfig {
     @Bean
     public Docket petApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("full-petstore")
+                .groupName("models")
                 .apiInfo(apiInfo())
                 .forCodeGeneration(true)
                 .select()
-                .paths(petstorePaths())
+                .paths(modelPaths())
                 .build();
     }
-    private Predicate<String> petstorePaths() {
+    private Predicate<String> modelPaths() {
         return or(
-                regex("/api/pet.*"),
-                regex("/api/user.*"),
-                regex("/api/store.*")
+                regex(Constants.URI_API_BASE + "/models.*")
         );
     }
 
