@@ -16,17 +16,19 @@
         <!--expiration time: default 300, which equals five minutes-->
         <beans:property name="nonceValiditySeconds" value="300"/>
     </beans:bean>
+
     <beans:bean id="userDetailsService" class="com.eugene.security.UserDetailsServiceImpl"/>
 
     <!--部分资源无需验证，直接访问-->
     <http pattern="/resources/**" security="none" />
     <http pattern="/static/**" security="none" />
+    <http pattern="/api/v1/models/**" security="none" />
     <!--需要验证的部分-->
     <http use-expressions="true"
           create-session="stateless"
           entry-point-ref="digestEntryPoint">
         <custom-filter ref="digestFilter" after="BASIC_AUTH_FILTER"/>
-        <!--<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>-->
+        <intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
     </http>
 
     <authentication-manager>
